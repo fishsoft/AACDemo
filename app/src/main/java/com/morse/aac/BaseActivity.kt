@@ -22,7 +22,6 @@ abstract class BaseActivity<T, M : BaseViewModel<T>> : AppCompatActivity(), Obse
 
         mModel = ViewModelProviders.of(this).get(bindModel())
         lifecycle.addObserver(BaseActivityLifecycle(this))
-        mModel.data.observe(this,this)
     }
 
     override fun onChanged(t: T?) {
